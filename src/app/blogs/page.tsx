@@ -18,17 +18,17 @@ export default async function StaticPage() {
               <ul className="flex space-x-4">
                 <li>
                   <Link href="/blogs">
-                    <p className="text-blue-500 hover:text-blue-700 transition">Home</p>
+                    <p className="text-black hover:text-gray-800 transition">Home</p>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
-                    <p className="text-blue-500 hover:text-blue-700 transition">About</p>
+                    <p className="text-black hover:text-gray-800 transition">About</p>
                   </Link>
                 </li>
                 <li>
                   <Link href="/contact">
-                    <p className="text-blue-500 hover:text-blue-700 transition">Contact</p>
+                    <p className="text-black hover:text-gray-800 transition">Contact</p>
                   </Link>
                 </li>
               </ul>
@@ -36,15 +36,19 @@ export default async function StaticPage() {
           </div>
         </header>
 
-        <div className="h-screen container mx-auto mt-20">
-            <ul className="space-y-10">
+        {/* メインコンテンツ */}
+        <div className="h-screen container mx-auto mt-20 pt-12">
+            {/* 記事一覧の見出しを追加 */}
+            <h2 className="text-2xl font-bold text-white-800 mb-7 ml-40 mt-25">記事一覧</h2>
+            
+            <ul className="space-y-5">
                 {contents.map((blog) => (
                  <li key={blog.id} className="p-5 rounded shadow-lg content flex justify-between items-center">
                     <h4 className="text-xl font-semibold text-gray-800">
                         {blog.title}
                     </h4>
                     <Link href={`/blogs/${blog.id}`}>
-                        <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition">
+                        <button className="px-4 py-2 bg-white text-black rounded hover:bg-gray-500 transition">
                             詳細
                         </button>
                     </Link>

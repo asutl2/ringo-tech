@@ -3,7 +3,7 @@ import { createClient } from 'microcms-js-sdk';
 export type Blog = {
     id: string;
     title: string;
-    body: string;   
+    body: string;
 }
 
 if (!process.env.SERVICE_DOMAIN) {
@@ -22,6 +22,9 @@ export const client = createClient({
 // ブログ一覧を取得
 export const getBlogs = async () => {
     const blogs = await client.getList<Blog>({
+        customRequestInit: {
+            cache: "no-store",
+          },
     endpoint: "rtblogs"
     });
     return blogs;
@@ -30,6 +33,9 @@ export const getBlogs = async () => {
 // ブログの詳細を取得
 export const getDetail = async (contentId: string) => {
     const blog = await client.getListDetail<Blog>({
+        customRequestInit: {
+            cache: "no-store",
+          },
         endpoint: "rtblogs",
         contentId,
     });

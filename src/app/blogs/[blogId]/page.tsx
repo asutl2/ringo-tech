@@ -27,24 +27,24 @@ export default async function StaticDetailPage({
               <ul className="flex space-x-4">
                 <li>
                   <Link href="/blogs">
-                    <p className="text-blue-500 hover:text-blue-700 transition">Home</p>
+                    <p className="text-black hover:text-gray-800 transition">Home</p>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
-                    <p className="text-blue-500 hover:text-blue-700 transition">About</p>
+                    <p className="text-black hover:text-gray-800 transition">About</p>
                   </Link>
                 </li>
                 <li>
                   <Link href="/contact">
-                    <p className="text-blue-500 hover:text-blue-700 transition">Contact</p>
+                    <p className="text-black hover:text-gray-800 transition">Contact</p>
                   </Link>
                 </li>
               </ul>
             </nav>
           </div>
         </header>
-      <div className="mt-20 h-screen pt-5">
+      <div className="mt-10 h-screen pt-5">
         <div className="content">
           <h1>{blog.title}</h1>
           <div
